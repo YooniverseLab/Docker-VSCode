@@ -12,6 +12,8 @@ RUN apt-get update && \
 
 # Expose the correct port
 EXPOSE $PORT
+EXPOSE 19132/udp
+EXPOSE 19132/tcp
 
 # Start code-server (listen on all interfaces)
 CMD ["code-server", "--bind-addr", "0.0.0.0:8080", "--auth", "none"]
